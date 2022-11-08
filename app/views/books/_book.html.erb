@@ -1,17 +1,16 @@
 <div id="<%= dom_id book %>">
-  <p>
-    <strong>Name:</strong>
-    <%= book.name %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= book.price %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
+  <tr>
+   <td> <%= book.name %></td>
+    <td><%= book.price %></td>
+    <td><%= book.author %></td>
+    <td>
+      <%= link_to "Show this book", book, class: "btn btn-info" %>
+      <%= link_to "Edit this book", edit_book_path(book), class:"btn btn-warning" %> |
+      <%= link_to "Destroy", book_path(book), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: "btn btn-danger" %>    
+    </td>
+  </tr>
 
 </div>

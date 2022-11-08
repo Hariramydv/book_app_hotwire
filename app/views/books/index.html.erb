@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Books</h1>
+<%= link_to "New book", new_book_path, class:"btn btn-primary", data: { controller: "book-modal" } %>
+
 
 <div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
+  <table class="table table-border">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Author</th>
+        <th colspan="3">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <%= render book %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New book", new_book_path, class:"btn btn-primary" %>
