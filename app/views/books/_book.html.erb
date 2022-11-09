@@ -1,11 +1,11 @@
 <div id="<%= dom_id book %>">
-  <tr>
+  <tr id="book_id_<%= book.id %>">
    <td> <%= book.name %></td>
     <td><%= book.price %></td>
     <td><%= book.author %></td>
     <td>
       <%= link_to "Show this book", book, class: "btn btn-info" %>
-      <%= link_to "Edit this book", edit_book_path(book), class:"btn btn-warning" %> |
+      <%= link_to "Edit this book", edit_book_path(book), class:"btn btn-warning", data: { controller: "book-modal" } %> |
       <%= link_to "Destroy", book_path(book), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"

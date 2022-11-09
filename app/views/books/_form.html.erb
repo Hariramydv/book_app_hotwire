@@ -1,5 +1,5 @@
 <%= form_with(model: book) do |form| %>
-  <div class="modal-body" style="background-color: black; color: white;">
+  <div class="modal-body" >
     
     <% if book.errors.any? %>
       <div style="color: red">
@@ -34,4 +34,8 @@
 
   </div>
 <% end %>
+ <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
 

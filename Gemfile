@@ -73,4 +73,4 @@ group :test do
 end
 gem 'cssbundling-rails'
 gem 'sass-rails'
-gem 'bootstrap'
+gem 'jquery-rails'
