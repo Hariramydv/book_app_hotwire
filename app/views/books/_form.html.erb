@@ -28,14 +28,11 @@
       <%= form.text_field :author %>
     </div>
     <br>
-    <div>
-      <%= form.submit  class:"btn btn-secondary", data: { action: "click->bootstrap-modal#submitEnd"} %>
-    </div>
-
+  </div>
+  <div class="modal-footer">
+    <%= form.submit  class:"btn btn-secondary", data: { action: "click->bootstrap-modal#hideModal"} %>
+    <%= link_to 'Back', root_path, class:"btn btn-info" %>
   </div>
 <% end %>
- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
+      
 

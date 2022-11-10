@@ -74,3 +74,4 @@ end
 gem 'cssbundling-rails'
 gem 'sass-rails'
 gem 'jquery-rails'
+gem 'jsbundling-rails'

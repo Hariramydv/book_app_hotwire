@@ -8,6 +8,9 @@ class BooksController < ApplicationController
 
   # GET /books/1 or /books/1.json
   def show
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   # GET /books/new
@@ -54,6 +57,8 @@ class BooksController < ApplicationController
     @book.destroy
 
     respond_to do |format|
+    format.turbo_stream { render turbo_stream: turbo_stream.remove("book_id_#{@book.id}") }
+
       format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
       format.json { head :no_content }
     end
